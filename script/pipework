@@ -4,10 +4,10 @@ use strict;
 use warnings;
 use lib qw( lib );
 
-use Pipework::Line;
+use Pipework::Pipeline;
 use Pipework::Message::MyDoc;
 
-my $line = Pipework::Line->new( 'MyDoc' );
+my $line = Pipework::Pipeline->new( 'MyDoc' );
 
 # same as Pipework::Stage::FetchURL->new( ... )
 $line->register( 'FetchURL' );

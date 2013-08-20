@@ -13,10 +13,10 @@ Pipework - Pipeline Processing Framework
 
 =head1 SYNOPSIS
 
-  use Pipework::Line::MyDoc;
+  use Pipework::Pipeline::MyDoc;
   use Pipework::Message::GetBody;
   
-  my $line = Pipework::Line::MyDoc->new;
+  my $line = Pipework::Pipeline::MyDoc->new;
   
   # same as Pipework::Stage::FetchURL->new( ... )
   $line->register( 'FetchURL' );

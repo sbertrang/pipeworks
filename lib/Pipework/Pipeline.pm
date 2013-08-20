@@ -1,4 +1,4 @@
-package Pipework::Line;
+package Pipework::Pipeline;
 
 use Mojo::Base -base;
 use Mojo::Loader;
@@ -43,6 +43,7 @@ sub register
 {
 	my $self = shift;
 	my $stage = shift;
+	my $namespace = $self->namespace;
 	my $stages = $self->stages;
 	my $type = $self->type;
 	my $object;
@@ -50,7 +51,7 @@ sub register
 	# pipeline or stage object
 	if ( blessed( $stage ) &&
 	    ( $stage->isa( 'Pipework::Stage' ) ||
-	      $stage->isa( 'Pipework::Line' ) ) ) {
+	      $stage->isa( 'Pipework::Pipeline' ) ) ) {
 		$object = $stage;
 	}
 	# code reference
@@ -62,7 +63,7 @@ sub register
 		my $loader = $self->loader;
 		my $class = $stage =~ m!\A[+](.*)!
 		          ? $1
-		          : "Pipework::Stage::$stage"
+		          : "${namespace}::Stage::$stage"
 		;
 
 		my $e = $loader->load( $class );
@@ -107,11 +108,11 @@ __END__
 
 =head1 NAME
 
-Pipework::Line - Pipeline base class with top-level functionality
+Pipework::Pipeline - Pipeline base class with top-level functionality
 
 =head1 SYNOPSIS
 
-  my $pipeline = Pipework::Line->new;
+  my $pipeline = Pipework::Pipeline->new;
   $pipeline->register( sub { ... } );
   $pipeline->process( { ... } );
 
