@@ -51,7 +51,8 @@ implementation.
 
 L<http://eventuallyconsistent.net/2013/08/12/messaging-as-a-programming-model-part-1/>,
 L<http://eventuallyconsistent.net/2013/08/14/messaging-as-a-programming-model-part-2/>,
-L<http://eventuallyconsistent.net/2013/08/19/messaging-as-a-programming-model-revisited/>
+L<http://eventuallyconsistent.net/2013/08/19/messaging-as-a-programming-model-revisited/>,
+L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/19/messaging-for-more-decoupling.aspx>
 
 =cut
 
