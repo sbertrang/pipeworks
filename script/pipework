@@ -7,20 +7,20 @@ use lib qw( lib );
 use Pipework::Pipeline;
 use Pipework::Message::MyDoc;
 
-my $line = Pipework::Pipeline->new( 'MyDoc' );
+my $pipeline = Pipework::Pipeline->new( 'MyDoc' );
 
 # same as Pipework::Stage::FetchURL->new( ... )
-$line->register( 'FetchURL' );
-$line->register( 'GetDocumentBody' );
-$line->register( sub {
+$pipeline->register( 'FetchURL' );
+$pipeline->register( 'GetDocumentBody' );
+$pipeline->register( sub {
 	my $message = shift;
 
 	warn( "body:\n" . $message->body );
 } );
 
 # same as Pipework::Message::MyDoc->new( ... )
-my $message = $line->message( {
+my $message = $pipeline->message( {
 	url => 'http://localhost/',
 } );
-my $result = $line->process( $message );
+my $result = $pipeline->process( $message );
 
