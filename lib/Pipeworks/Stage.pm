@@ -36,7 +36,7 @@ sub get
 		return $value if ( blessed( $value ) || '' ) eq $class;
 	}
 
-	confess( "$message has invalid attribute: $attribute: $value ($class)" );
+	confess( "$message has invalid attribute: $attribute: $value (@$classes)" );
 }
 
 sub set
@@ -55,16 +55,15 @@ sub set
 	}
 
 	my $class = $sets->{ $attribute };
+	my $classes = ref( $class ) ? $class : [ $class ];
 
-	unless ( ref( $value ) ) {
-		confess( "$message attribute value needs to be reference: $value ($class)" );
+	for my $class ( @$classes ) {
+		return $message->$attribute( $value )
+			if ref( $value ) eq $class ||
+			   blessed( $value ) eq $class;
 	}
 
-	unless ( ref( $value ) eq $class || blessed( $value ) eq $class ) {
-		confess( "$message has invalid attribute: $attribute: $value ($class)" );
-	}
-
-	return $message->$attribute( $value );
+	confess( "$message has invalid attribute: $attribute: $value (@$classes)" );
 }
 
 sub process
