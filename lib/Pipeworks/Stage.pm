@@ -60,7 +60,7 @@ sub set
 	for my $class ( @$classes ) {
 		return $message->$attribute( $value )
 			if ref( $value ) eq $class ||
-			   blessed( $value ) eq $class;
+			   ( blessed( $value ) || '' ) eq $class;
 	}
 
 	confess( "$message has invalid attribute: $attribute: $value (@$classes)" );
