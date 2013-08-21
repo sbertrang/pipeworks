@@ -1,4 +1,4 @@
-package Pipework::Stage;
+package Pipeworks::Stage;
 
 use Mojo::Base -base;
 use Carp qw( confess );

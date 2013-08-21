@@ -1,4 +1,4 @@
-package Pipework::Message::MyDoc;
+package Pipeworks::Message::MyDoc;
 
 use Mojo::Base -base;
 

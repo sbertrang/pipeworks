@@ -1,6 +1,6 @@
-package Pipework::Stage::GetDocumentBody;
+package Pipeworks::Stage::GetDocumentBody;
 
-use Mojo::Base qw( Pipework::Stage );
+use Mojo::Base qw( Pipeworks::Stage );
 
 has gets => sub { {
 	res	=> 'Mojo::Message::Response',

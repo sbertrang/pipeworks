@@ -4,12 +4,12 @@ use strict;
 use warnings;
 use lib qw( lib );
 
-use Pipework::Pipeline;
-use Pipework::Message::MyDoc;
+use Pipeworks::Pipeline;
+use Pipeworks::Message::MyDoc;
 
-my $pipeline = Pipework::Pipeline->new( 'MyDoc' );
+my $pipeline = Pipeworks::Pipeline->new( 'MyDoc' );
 
-# same as Pipework::Stage::FetchURL->new( ... )
+# same as Pipeworks::Stage::FetchURL->new( ... )
 $pipeline->register( 'FetchURL' );
 $pipeline->register( 'GetDocumentBody' );
 $pipeline->register( sub {
@@ -18,7 +18,7 @@ $pipeline->register( sub {
 	warn( "body:\n" . $message->body );
 } );
 
-# same as Pipework::Message::MyDoc->new( ... )
+# same as Pipeworks::Message::MyDoc->new( ... )
 my $message = $pipeline->message( {
 	url => 'http://localhost/',
 } );

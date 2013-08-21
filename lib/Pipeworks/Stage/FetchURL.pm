@@ -1,6 +1,6 @@
-package Pipework::Stage::FetchURL;
+package Pipeworks::Stage::FetchURL;
 
-use Mojo::Base qw( Pipework::Stage );
+use Mojo::Base qw( Pipeworks::Stage );
 use Mojo::UserAgent;
 
 has gets => sub { {

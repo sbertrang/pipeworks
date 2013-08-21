@@ -1,4 +1,4 @@
-package Pipework;
+package Pipeworks;
 
 use strict;
 use warnings;
@@ -9,21 +9,21 @@ __END__
 
 =head1 NAME
 
-Pipework - Pipeline Processing Framework
+Pipeworks - Pipeline Processing Framework
 
 =head1 SYNOPSIS
 
-  use Pipework::Pipeline::MyDoc;
-  use Pipework::Message::GetBody;
+  use Pipeworks::Pipeline::MyDoc;
+  use Pipeworks::Message::GetBody;
   
-  my $line = Pipework::Pipeline::MyDoc->new;
+  my $line = Pipeworks::Pipeline::MyDoc->new;
   
-  # same as Pipework::Stage::FetchURL->new( ... )
+  # same as Pipeworks::Stage::FetchURL->new( ... )
   $line->register( 'FetchURL' );
   $line->register( 'GetDocumentBody' );
   $line->register( sub { my $msg = shift; warn( "body:\n" . $msg->body ) } );
   
-  # same as Pipework::Message::GetBody->new( ... )
+  # same as Pipeworks::Message::GetBody->new( ... )
   my $message = $line->message( GetBody => {
     url => 'http://localhost/',
   } );

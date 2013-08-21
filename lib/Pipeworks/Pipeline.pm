@@ -1,8 +1,8 @@
-package Pipework::Pipeline;
+package Pipeworks::Pipeline;
 
 use Mojo::Base -base;
 use Mojo::Loader;
-use Pipework::Stage::Callback;
+use Pipeworks::Stage::Callback;
 use Scalar::Util qw( blessed );
 
 has stages => sub { [] };
@@ -10,7 +10,7 @@ has loader => sub { Mojo::Loader->new };
 
 # message class a pipeline can operate with
 has "type";
-has "namespace" => "Pipework";
+has "namespace" => "Pipeworks";
 
 sub new
 {
@@ -50,13 +50,13 @@ sub register
 
 	# pipeline or stage object
 	if ( blessed( $stage ) &&
-	    ( $stage->isa( 'Pipework::Stage' ) ||
-	      $stage->isa( 'Pipework::Pipeline' ) ) ) {
+	    ( $stage->isa( 'Pipeworks::Stage' ) ||
+	      $stage->isa( 'Pipeworks::Pipeline' ) ) ) {
 		$object = $stage;
 	}
 	# code reference
 	elsif ( ref( $stage ) eq 'CODE' ) {
-		$object = Pipework::Stage::Callback->new( $stage );
+		$object = Pipeworks::Stage::Callback->new( $stage );
 	}
 	# class names
 	else {
@@ -108,11 +108,11 @@ __END__
 
 =head1 NAME
 
-Pipework::Pipeline - Pipeline base class with top-level functionality
+Pipeworks::Pipeline - Pipeline base class with top-level functionality
 
 =head1 SYNOPSIS
 
-  my $pipeline = Pipework::Pipeline->new;
+  my $pipeline = Pipeworks::Pipeline->new;
   $pipeline->register( sub { ... } );
   $pipeline->process( { ... } );
 

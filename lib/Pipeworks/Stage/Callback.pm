@@ -1,6 +1,6 @@
-package Pipework::Stage::Callback;
+package Pipeworks::Stage::Callback;
 
-use Mojo::Base qw( Pipework::Stage );
+use Mojo::Base qw( Pipeworks::Stage );
 
 sub new
 {
@@ -23,11 +23,11 @@ __END__
 
 =head1 NAME
 
-Pipework::Stage::Callback - light wrapper to put closures in stages
+Pipeworks::Stage::Callback - light wrapper to put closures in stages
 
 =head1 SYNOPSIS
 
-  my $stage = Pipework::Stage::Callback->new( sub { ... } );
+  my $stage = Pipeworks::Stage::Callback->new( sub { ... } );
   
   $stage->process( ... );
 
