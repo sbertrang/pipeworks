@@ -52,7 +52,10 @@ implementation.
 L<http://eventuallyconsistent.net/2013/08/12/messaging-as-a-programming-model-part-1/>,
 L<http://eventuallyconsistent.net/2013/08/14/messaging-as-a-programming-model-part-2/>,
 L<http://eventuallyconsistent.net/2013/08/19/messaging-as-a-programming-model-revisited/>,
-L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/19/messaging-for-more-decoupling.aspx>
+L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/19/messaging-for-more-decoupling.aspx>,
+L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/17/messaging-as-a-programming-model-ndash-letacutes-get-real.aspx>,
+L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/18/flows-ndash-visualizing-the-messaging-programming-model.aspx>,
+L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/19/nested-messaging---flows-on-different-levels-of-abstraction.aspx>
 
 =cut
 
