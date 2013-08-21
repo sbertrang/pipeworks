@@ -4,6 +4,9 @@ use Mojo::Base -base;
 use Carp qw( confess );
 use Scalar::Util qw( blessed );
 
+# provide basics for the cases where not actually used
+has [qw[ gets sets ]] => sub { {} };
+
 sub get
 {
 	my ( $self, $attribute, $message ) = @_;
