@@ -59,5 +59,17 @@ L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/17/messaging-as-
 L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/18/flows-ndash-visualizing-the-messaging-programming-model.aspx>,
 L<http://geekswithblogs.net/theArchitectsNapkin/archive/2013/08/19/nested-messaging---flows-on-different-levels-of-abstraction.aspx>
 
+=head1 AUTHOR
+
+Simon Bertrang E<lt>janus@cpan.orgE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2013 by Simon Bertrang
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.12.2 or,
+at your option, any later version of Perl 5 you may have available.
+
 =cut
 

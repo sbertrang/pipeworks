@@ -7,4 +7,5 @@ lib/Pipeworks/Stage/FetchURL.pm
 lib/Pipeworks/Stage/GetDocumentBody.pm
 Makefile.PL
 MANIFEST
+README
 script/pipeworks
