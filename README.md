@@ -57,5 +57,4 @@ Simon Bertrang <janus@cpan.org>
 Copyright (C) 2013 by Simon Bertrang
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.12.2 or,
-at your option, any later version of Perl 5 you may have available.
+it under the same terms as Perl itself.
