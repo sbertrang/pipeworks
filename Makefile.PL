@@ -12,4 +12,12 @@ WriteMakefile(
 	},
 	ABSTRACT_FROM	=> 'lib/Pipeworks.pm',
 	AUTHOR		=> 'Simon Bertrang <janus@cpan.org>',
+	META_MERGE	=> {
+		resources	=> {
+			license		=> 'http://dev.perl.org/licenses/',
+			repository	=> 'https://github.com/sbertrang/pipeworks.git',
+			bugtracker	=> 'https://github.com/sbertrang/pipeworks/issues',
+		},
+	},
+	LICENSE		=> 'perl',
 );
