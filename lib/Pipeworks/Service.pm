@@ -14,8 +14,7 @@ sub new
 	my $self = shift->SUPER::new( @_ );
 	my $class = $self->class;
 
-	my $loader = Mojo::Loader->new;
-	my $e = $loader->load( $self->class );
+	my $e = Mojo::Loader::load_class( $class );
 
 	if ( ref( $e ) ) {
 		warn( "FAIL: $e\n\n$@" );

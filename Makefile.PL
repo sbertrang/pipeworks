@@ -8,7 +8,7 @@ WriteMakefile(
 	NAME		=> 'Pipeworks',
 	VERSION_FROM	=> 'lib/Pipeworks.pm',
 	PREREQ_PM	=> {
-		Mojolicious	=> 0,
+		Mojolicious	=> '6.0',
 	},
 	ABSTRACT_FROM	=> 'lib/Pipeworks.pm',
 	AUTHOR		=> 'Simon Bertrang <janus@cpan.org>',

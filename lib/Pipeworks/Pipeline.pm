@@ -6,7 +6,6 @@ use Pipeworks::Stage::Callback;
 use Scalar::Util qw( blessed );
 
 has stages => sub { [] };
-has loader => sub { Mojo::Loader->new };
 
 # message class a pipeline can operate with
 has "type";
@@ -27,9 +26,8 @@ sub new
 		    ? $1
 		    : "${namespace}::Message::$type"
 	;
-	my $loader = $self->loader;
 
-	if ( ref( my $e = $loader->load( $message ) ) ) {
+	if ( ref( my $e = Mojo::Loader::load_class( $message ) ) ) {
 		warn( "FAIL: e=$e, \@=$@" );
 		return undef;
 	}
@@ -60,13 +58,12 @@ sub register
 	}
 	# class names
 	else {
-		my $loader = $self->loader;
 		my $class = $stage =~ m!\A[+](.*)!
 		          ? $1
 		          : "${namespace}::Stage::$stage"
 		;
 
-		my $e = $loader->load( $class );
+		my $e = Mojo::Loader::load_class( $class );
 
 		if ( ref( $e ) || $@ ) {
 			warn( "FAIL: e=$e, \@=$@" );
